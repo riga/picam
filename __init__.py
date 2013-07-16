@@ -8,12 +8,12 @@ class PiCam(object):
     PHOTOCMD = "raspistill"
     VIDEOCMD = "raspivid"
 
-    def __init__(self, path=None, shortArgs=False):
+    def __init__(self, path=None, shortargs=False):
         if path:
             path = os.expandvars(os.expanduser(path))
             os.chdir(path)
         self.path = path
-        self.shortArgs = shortArgs
+        self.shortargs = shortargs
 
     def help(self, mode):
         if mode.lower() == "photo":
@@ -36,7 +36,7 @@ class PiCam(object):
             target = os.path.join(path, name)
         
         parts = [mode, "-o %s -t %s" % (target, timeout)]
-        indicator = "-" if self.shortArgs else "--"
+        indicator = "-" if self.shortargs else "--"
         for key, value in kwargs.items():
             if isinstance(value, bool):
             	if value:
