@@ -50,6 +50,6 @@ class PiCam(object):
     def photo(self, *args, **kwargs):
         self.__record(PiCam.PHOTOCMD, *args, **kwargs)
 
-    def video(self, name=None, path=None, **kwargs):
+    def video(self, *args, **kwargs):
         self.__record(PiCam.VIDEOCMD, *args, **kwargs)
         
